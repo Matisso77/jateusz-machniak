@@ -11,7 +11,7 @@ function changeContent() {
             photoDiv.style.backgroundImage = 'url("' + JATEUSZ_PHOTO_URL + '")';
         });
 		
-		let images = document.querySelectorAll('span._4jzq._jf4 img, img._5bli._2_a2.img, div._3szp img, ._6f3k img, span._4kf5 img, span._1z8r img, div._4eby._2c9i img');
+		let images = document.querySelectorAll('span._4jzq._jf4 img, img._5bli._2_a2.img, div._3szp img, ._6f3k img, span._4kf5 img, span._1z8r img, div._4eby._2c9i img, img._1ift.img');
 		Array.prototype.forEach.call(images, photo => photo.src = JATEUSZ_PHOTO_URL);
 		
 		
@@ -21,7 +21,7 @@ function changeContent() {
     function changeConversationsNames() {
         const JATEUSZ_NAME = "Jateusz Machniak";
 		const SHORTED_JATEUSZ = "Jateuszenger";
-        let spans = document.querySelectorAll('[id*="row_header_id"] span._1ht6, span._3oh- span, h2 span._3oh-, span._2jnv span, div._364g, h5._ih3');
+        let spans = document.querySelectorAll('[id*="row_header_id"] span._1ht6, h2 span._3oh-, span._2jnv span, div._364g, h5._ih3, div._3s-8._3-9b._3-8w, ._3oh- a');
 
         Array.prototype.forEach.call(spans, span => span.innerHTML = JATEUSZ_NAME);
 		
