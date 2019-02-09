@@ -5,25 +5,38 @@ function changeContent() {
         const JATEUSZ_PHOTO_URL = "https://z-p3-scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/46170045_723043544736253_8450186384936796160_n.jpg?_nc_cat=106&_nc_ht=z-p3-scontent-waw1-1.xx&oh=880f1071415abe1985f0091e09b9a6ad&oe=5CF364C6";
         let personalConversationPhotos = Array.prototype.filter.call(document.getElementsByClassName("img"), photo => photo.className === "img");
         let groupConversationPhotoDivs = Array.prototype.filter.call(document.querySelectorAll('[style*=background-image]'), photo => photo.className === "");
-
+		
         Array.prototype.forEach.call(personalConversationPhotos, photo => photo.src = JATEUSZ_PHOTO_URL);
         Array.prototype.forEach.call(groupConversationPhotoDivs, photoDiv => {
             photoDiv.style.backgroundImage = 'url("' + JATEUSZ_PHOTO_URL + '")';
         });
+		
+		let images = document.querySelectorAll('span._4jzq._jf4 img, img._5bli._2_a2.img, div._3szp img, ._6f3k img, span._4kf5 img, span._1z8r img, div._4eby._2c9i img');
+		Array.prototype.forEach.call(images, photo => photo.src = JATEUSZ_PHOTO_URL);
+		
+		
     }
 
 
     function changeConversationsNames() {
         const JATEUSZ_NAME = "Jateusz Machniak";
-        let spans = document.querySelectorAll('[id*="row_header_id"] span');
+		const SHORTED_JATEUSZ = "Jateuszenger";
+        let spans = document.querySelectorAll('[id*="row_header_id"] span._1ht6, span._3oh- span, h2 span._3oh-, span._2jnv span, div._364g, h5._ih3');
 
         Array.prototype.forEach.call(spans, span => span.innerHTML = JATEUSZ_NAME);
+		
+		let mainName = document.querySelectorAll('h1._1tqi');
+		Array.prototype.forEach.call(mainName, main => main.innerHTML = SHORTED_JATEUSZ);
+		
+		let search = document.querySelectorAll('input._58al');
+		Array.prototype.forEach.call(search, input => input.placeholder = JATEUSZ_NAME);
+		
     }
 
     setInterval(function () {
         changePhotos();
         changeConversationsNames();
-    }, 1000);
+    }, 50);
 }
 
 
