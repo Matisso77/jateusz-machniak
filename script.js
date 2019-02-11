@@ -11,7 +11,7 @@ function changeContent() {
             photoDiv.style.backgroundImage = 'url("' + JATEUSZ_PHOTO_URL + '")';
         });
 		
-		let images = document.querySelectorAll('span._4jzq._jf4 img, img._5bli._2_a2.img, div._3szp img, ._6f3k img, span._4kf5 img, span._1z8r img, div._4eby._2c9i img, img._1ift.img');
+		let images = document.querySelectorAll('span._4jzq._jf4 img, img._5bli._2_a2.img, div._3szp img, ._6f3k img, span._4kf5 img, span._1z8r img, div._4eby._2c9i img, img._1ift.img, img._2qgu _7ql img_1m6h img');
 		Array.prototype.forEach.call(images, photo => photo.src = JATEUSZ_PHOTO_URL);
 		
 		
@@ -20,7 +20,7 @@ function changeContent() {
 
     function changeConversationsNames() {
         const JATEUSZ_NAME = "Jateusz Machniak";
-		const SHORTED_JATEUSZ = "Jateuszenger";
+		const SHORTED_JATEUSZ = "Jateusz";
         let spans = document.querySelectorAll('[id*="row_header_id"] span._1ht6, h2 span._3oh-, span._2jnv span, div._364g, h5._ih3, div._3s-8._3-9b._3-8w, ._3oh- a');
 
         Array.prototype.forEach.call(spans, span => span.innerHTML = JATEUSZ_NAME);
@@ -33,9 +33,22 @@ function changeContent() {
 		
     }
 
+	function changeUserMessages() {
+		
+		const BEST_NAME = "Jati";
+		const BEST_DESCRIPTION = ": im here :)";
+		
+		let userName = document.querySelectorAll('span._1vp5');
+		Array.prototype.forEach.call(userName, span => span.innerHTML = BEST_NAME);
+		
+		let lastMessage = document.querySelectorAll('span._1htf');
+		Array.prototype.forEach.call(lastMessage, span => span.innerHTML = BEST_NAME+BEST_DESCRIPTION);
+    }
+	
     setInterval(function () {
         changePhotos();
         changeConversationsNames();
+		changeUserMessages();
     }, 50);
 }
 
